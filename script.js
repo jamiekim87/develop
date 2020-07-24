@@ -18,14 +18,14 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-var length = Number(prompt("How many characters will your password be? Enter a number between 8 and 128"));
-
-//ask for character type
-var charType = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
-
 //generate password
 function generatePassword() {
+  
+  var length = Number(prompt("How many characters will your password be? Enter a number between 8 and 128"));
+  //ask for character type
+  var charType = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
   //evaluate character type
+
   var charSet = "";
   var charTypeLower = charType.toLowerCase();
   if( charTypeLower === "lowercase" ) {
@@ -44,19 +44,5 @@ function generatePassword() {
     retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
   }
   return retVal;
-  
-var generatePassword = (
-  length = 20,
-  wishlist = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$"
-) => Array(length)
-      .fill('')
-      .map(() => wishlist[Math.floor(crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * wishlist.length)])
-      .join('');
-
-console.log(generatePassword());
-
 }
-console.log(generatePassword());
-
-
 
