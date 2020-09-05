@@ -45,4 +45,3 @@ function generatePassword() {
   }
   return retVal;
 }
-
